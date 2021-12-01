@@ -1,0 +1,82 @@
+#### DIFFRENT IAAS CPI
+
+cpis:
+- name: aws-cpi
+  type: aws
+  properties:
+    access_key_id: ((aws_access_key_id))
+    secret_access_key: ((aws_secret_access_key))
+    default_key_name: ((aws_default_key_name))
+    default_security_groups: ((aws_default_security_groups))
+    region: ((aws_region))
+
+- name: openstack-cpi
+  type: openstack
+  properties:
+    auth_url: ((openstack_auth_url))
+    username: ((openstack_username))
+    api_key: ((openstack_password))
+    domain: ((openstack_domain))
+    project: ((openstack_project))
+    region: ((openstack_region))
+    default_key_name: ((openstack_default_key_name))
+    default_security_groups: ((openstack_default_security_groups))
+    human_readable_vm_names: true
+
+- name: vsphere-cpi
+  type: vsphere
+  properties:
+    host: ((vcenter_ip))
+    user: ((vcenter_user))
+    password: ((vcenter_password))
+    default_disk_type: thin
+    datacenters:
+    - clusters:
+      - { ((vcenter_cluster)): {}}
+      datastore_pattern: ((vcenter_ds))
+      disk_path: ((vcenter_disks))
+      name: ((vcenter_dc))
+      persistent_datastore_pattern: ((vcenter_ds))
+      template_folder: ((vcenter_templates))
+      vm_folder: ((vcenter_vms))
+
+#### SAME IAAS CPI
+
+#- name: aws-cpi-second
+#  type: aws
+#  properties:
+#    access_key_id: ((aws_second_access_key_id))
+#    secret_access_key: ((aws_second_secret_access_key))
+#    default_key_name: ((aws_second_default_key_name))
+#    default_security_groups: ((aws_second_default_security_groups))
+#    region: ((aws_second_region))
+
+#- name: openstack-cpi-second
+#  type: openstack
+#  properties:
+#    auth_url: ((openstack_second_auth_url))
+#    username: ((openstack_second_username))
+#    api_key: ((openstack_second_password))
+#    domain: ((openstack_second_domain))
+#    project: ((openstack_second_project))
+#    region: ((openstack_second_region))
+#    default_key_name: ((openstack_second_default_key_name))
+#    default_security_groups: ((openstack_second_default_security_groups))
+#    human_readable_vm_names: true
+
+#- name: vsphere-cpi-second
+#  type: vsphere
+#  properties:
+#    host: ((vcenter_second_ip))
+#    user: ((vcenter_second_user))
+#    password: ((vcenter_second_password))
+#    default_disk_type: thin
+#    datacenters:
+#    - clusters:
+#      - { ((vcenter_second_cluster)): {}}
+#      datastore_pattern: ((vcenter_second_ds))
+#      disk_path: ((vcenter_second_disks))
+#      name: ((vcenter_second_dc))
+#      persistent_datastore_pattern: ((vcenter_second_ds))
+#      template_folder: ((vcenter_second_templates))
+#      vm_folder: ((vcenter_second_vms))

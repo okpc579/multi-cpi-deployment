@@ -1,0 +1,52 @@
+- type: replace
+  path: /releases/-
+  value:
+    name: bosh-aws-cpi
+    version: 67
+    url: https://bosh.io/d/github.com/cloudfoundry-incubator/bosh-aws-cpi-release?v=67
+    sha1: cfcbc98affa9cad674087ab6b8bd4b1188b18439
+- type: replace
+  path: /resource_pools/name=default/stemcell?
+  value:
+    url: https://s3.amazonaws.com/bosh-aws-light-stemcells/light-bosh-stemcell-3468.1-aws-xen-hvm-ubuntu-trusty-go_agent.tgz
+    sha1: 741c71747118200c9251545883e184c43c059da9
+- type: replace
+  path: /resource_pools/name=default/cloud_properties?
+  value:
+    instance_type: t2.nano
+    availability_zone: ((availability_zone))
+    source_dest_check: false # masquerade
+- type: replace
+  path: /networks/name=default/subnets/0/cloud_properties?
+  value:
+    subnet: ((subnet_id))
+- type: replace
+  path: /cloud_provider/template?
+  value:
+    name: aws_cpi
+    release: bosh-aws-cpi
+- type: replace
+  path: /cloud_provider/ssh_tunnel?
+  value:
+    host: ((wan_ip))
+    port: 22
+    user: vcap
+    private_key: ((bootstrap_ssh_key_path))
+- type: replace
+  path: /cloud_provider/properties/aws?
+  value:
+    access_key_id: ((access_key_id))
+    secret_access_key: ((secret_access_key))
+    default_security_groups: ((default_security_groups))
+    default_key_name: ((bootstrap_ssh_key_name))
+    region: ((region))
+- type: replace
+  path: /variables/-
+  value:
+    name: ssh_tunnel
+    type: ssh
+- path: /resource_pools/0/cloud_properties/advertised_routes?/-
+  type: replace
+  value:
+    table_id: ((route_table_id))
+    destination: ((remote_network_cidr_block))

@@ -1,0 +1,61 @@
+# IF USE DIFFRENT IAAS, CPI MULTI-CPI VARIABLE
+
+## MULTI-CPI VARIABLE :: AWS
+aws_access_key_id: "XXXXXXXXXXXXXXX"                    # AWS Access Key
+aws_secret_access_key: "XXXXXXXXXXXXX"                  # AWS Secret Key
+aws_default_key_name: "paasta-key"                      # AWS Key Name
+aws_default_security_groups: ["paasta-security"]        # AWS Security-Group
+aws_region: "ap-northeast-2"                            # AWS Region
+
+## MULTI-CPI VARIABLE :: OpenStack
+openstack_auth_url: "http://XX.XXX.XX.XX:XXXX/v3/"      # OpenStack Keystone URL
+openstack_username: "XXXXXX"                            # OpenStack User Name
+openstack_password: "XXXXXX"                            # OpenStack User Password
+openstack_domain: "XXXXXX"                              # OpenStack Domain Name
+openstack_project: "PaaS-TA"                            # OpenStack Project
+openstack_region: "RegionOne"                           # OpenStack Region
+openstack_default_key_name: "paasta-key"                # OpenStack Key Name
+openstack_default_security_groups: ["paasta-security"]  # OpenStack Security Group
+
+## MULTI-CPI VARIABLE :: vSphere
+vcenter_ip: "XX.XX.XXX.XX"                              # vCenter Private IP
+vcenter_user: "XXXXX"                                   # vCenter User Name
+vcenter_password: "XXXXXX"                              # vCenter User Password
+vcenter_cluster: "PaaS-TA"                              # vCenter Cluster Name
+vcenter_ds: "PaaS-TA_Storage"                           # vCenter Data Storage Name
+vcenter_disks: "PaaS-TA_Disks"                          # vCenter Disk Name
+vcenter_dc: "PaaS-TA_DC"                                # vCenter Data Center Name
+vcenter_templates: "PaaS-TA_Templates"                  # vCenter Templates Name
+vcenter_vms: "PaaS-TA_VMs"                              # vCenter VMS Name
+
+
+
+# IF USE SAME IAAS, CPI MULTI-CPI VARIABLE
+
+## MULTI-CPI VARIABLE :: aws second
+aws_second_access_key_id: "XXXXXXXXXXXXXXX"                    # AWS Second Access Key
+aws_second_secret_access_key: "XXXXXXXXXXXXX"                  # AWS Second Secret Key
+aws_second_default_key_name: "paasta-key"                      # AWS Second Key Name
+aws_second_default_security_groups: ["paasta-security"]        # AWS Second Security-Group
+aws_second_region: "ap-northeast-2"                            # AWS Second Region
+
+## MULTI-CPI VARIABLE :: OpenStack second
+openstack_second_auth_url: "http://XX.XXX.XX.XX:XXXX/v3/"      # OpenStack Second Keystone URL
+openstack_second_username: "XXXXXX"                            # OpenStack Second User Name
+openstack_second_password: "XXXXXX"                            # OpenStack Second User Password
+openstack_second_domain: "XXXXXX"                              # OpenStack Second Domain Name
+openstack_second_project: "PaaS-TA"                            # OpenStack Second Project
+openstack_second_region: "RegionOne"                           # OpenStack Second Region
+openstack_second_default_key_name: "paasta-key"                # OpenStack Second Key Name
+openstack_second_default_security_groups: ["paasta-security"]  # OpenStack Second Security Group
+
+## MULTI-CPI VARIABLE :: vSphere second
+vcenter_second_ip: "XX.XX.XXX.XX"                              # vCenter Second Private IP
+vcenter_second_user: "XXXXX"                                   # vCenter Second User Name
+vcenter_second_password: "XXXXXX"                              # vCenter Second User Password
+vcenter_second_cluster: "PaaS-TA"                              # vCenter Second Cluster Name
+vcenter_second_ds: "PaaS-TA_Storage"                           # vCenter Second Data Storage Name
+vcenter_second_disks: "PaaS-TA_Disks"                          # vCenter Second Disk Name
+vcenter_second_dc: "PaaS-TA_DC"                                # vCenter Second Data Center Name
+vcenter_second_templates: "PaaS-TA_Templates"                  # vCenter Second Templates Name
+vcenter_second_vms: "PaaS-TA_VMs"                              # vCenter Second VMS Name
