@@ -1,0 +1,47 @@
+- path: /releases/-
+  type: replace
+  value:
+    name: bosh-openstack-cpi
+    sha1: 7c9be83eb11214db85ef5320f26ec9db8fab353f
+    url: https://bosh.io/d/github.com/cloudfoundry/bosh-openstack-cpi-release?v=44
+    version: 44
+- path: /resource_pools/name=default/stemcell?
+  type: replace
+  value:
+    sha1: 4ac4a2b5e1c2f210ec952eaa73df2691a6525e67
+    url: https://bosh-core-stemcells.s3-accelerate.amazonaws.com/621.125/bosh-stemcell-621.125-openstack-kvm-ubuntu-xenial-go_agent.tgz
+- path: /resource_pools/name=default/cloud_properties?
+  type: replace
+  value:
+    availability_zone: ((az))
+    instance_type: m1.small
+- path: /networks/name=default/subnets/0/cloud_properties?
+  type: replace
+  value:
+    net_id: ((net_id))
+- path: /cloud_provider/template?
+  type: replace
+  value:
+    name: openstack_cpi
+    release: bosh-openstack-cpi
+- path: /cloud_provider/ssh_tunnel?
+  type: replace
+  value:
+    host: ((wan_ip))
+    port: 22
+    private_key: ((private_key))
+    user: vcap
+- path: /cloud_provider/properties/openstack?
+  type: replace
+  value:
+    api_key: ((openstack_password))
+    auth_url: ((auth_url))
+    default_key_name: ((default_key_name))
+    default_security_groups: ((default_security_groups))
+    domain: ((openstack_domain))
+    human_readable_vm_names: true
+    project: ((openstack_project))
+    region: ((region))
+    username: ((openstack_username))
+#- path: /resource_pools/0/cloud_properties/advertised_routes?
+#  type: remove

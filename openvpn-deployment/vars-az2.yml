@@ -1,0 +1,52 @@
+### openvpn default
+wan_ip: "XXX.XXX.XXX.XXX"                         # Used by OpenVPN Server-2 ip 
+push_routes: ["XXX.XXX.XXX.XXX 255.255.255.0"]    # ex) 20.0.20.0 255.255.255.0
+lan_gateway: "XXX.XXX.XXX.XXX"                    # ex) 20.0.20.1
+lan_ip: "XXX.XXX.XXX.XXX"                         # ex) 20.0.20.10
+lan_network: "XXX.XXX.XXX.XXX"                    # ex) 20.0.20.0
+lan_network_mask_bits: "24"                       # ex) 24
+vpn_network: "XXX.XXX.XXX.XXX"                    # ex) 192.168.1.0 (az-1: 192.168.0.0, az-2: 192.168.1.0)
+vpn_network_mask: "XXX.XXX.XXX.XXX"               # ex) 255.255.255.0
+vpn_network_mask_bits: "24"                       # ex) 24
+remote_network_cidr_block: "XXX.XXX.XXX.XXX/24"   # ex) 10.0.10.0/24
+remote_vpn_ip: "XXX.XXX.XXX.XXX"                  # Used by OpenVPN Server-1 ip 
+
+#### IaaS :: AWS
+#access_key_id: "XXXXXXXXXXXXXXX"                  # AWS Access Key
+#secret_access_key: "XXXXXXXXXXXXXXX"              # AWS Secret Key
+#region: "ap-northeast-2"                          # AWS Region
+#availability_zone: "ap-northeast-2a"              # AWS Region
+#subnet_id: "paasta-subnet"                        # AWS Subnet ex) subnet-0ebc.....
+#default_security_groups: ["bosh-sg"]              # AWS Security-Group
+#bootstrap_ssh_key_name: "bosh-key"                # AWS SSH Private Key Name
+#bootstrap_ssh_key_path: "/.ssh/bosh-key.pem"      # AWS SSH Private Key Path
+#route_table_id: "XXXXXXXXXXXXXXX"                 # AWS Route table id ex) rtb-4127..
+
+#### IaaS :: openstack 
+#auth_url: "http://XXX.XXX.XXX.XXX:5000/v3/"       # Openstack Keystone URL
+#az: "nova"                                        # Openstack AZ Zone
+#default_key_name: "bosh-key"                      # Openstack Key Name
+#default_security_groups: ["bosh-sg"]              # Openstack Security Group
+#net_id: "XXXXXXXXXXXXXXX"                         # Openstack Network ID ex) 70f151db-274....
+#openstack_password: "XXXXXXXXXXXXXXX"             # Openstack User Password
+#openstack_username: "XXXXXXXXXXXXXXX"             # Openstack User Name
+#openstack_domain: "default"                       # Openstack Domain Name
+#openstack_project: "paasta"                       # Openstack Project
+#private_key: "/.ssh/bosh-key.pem"                 # Openstack SSH Private Key Path
+#region: "RegionOne"                               # Openstack Region
+
+#### IaaS :: vsphere 
+#wan_gateway: "XXX.XXX.XXX.XXX"                    # Used by OpenVPN gateway ex) 172.100.100.100
+#wan_network: "XXX.XXX.XXX.XXX"                    # Used by OpenVPN Network ex) 172.100.100.0
+#wan_network_mask_bits: "24"                       # Used by OpenVPN Mask bits ex) 24
+#wan_network_name: "Public Network"                # vCenter Public Network Name 
+#lan_network_name: "Private Network"               # vCenter Private Network Name 
+#vcenter_dc: "DataCenter"                          # vCenter Data Center Name
+#vcenter_cluster: "CLUSTER"                        # vCenter Cluster Name
+#vcenter_ip: "XXX.XXX.XXX.XXX"                     # vCenter Private IP
+#vcenter_user: "XXXXXXXXXXXXXXX"                   # vCenter User Name
+#vcenter_password: "XXXXXXXXXXXXXXX"               # vCenter User Password
+#vcenter_ds: "DataStorage"                         # vCenter Data Storage Name
+#vcenter_templates: "Templates"                    # vCenter Templates Name
+#vcenter_vms: "Vms"                                # vCenter VMS Name
+#vcenter_disks: "Disks"                            # vCenter Disk Name
